@@ -3,27 +3,27 @@ package AtvBicicleta;
 public class bicicleta{
     public int velocidade;
     public int marcha;
+    public int velocidadeMax;
 
-public bicicleta(int velocidade, int marcha){
-    this.velocidade=0;
-    this.marcha=0;
+public bicicleta(int velocidadeMax){
+    this.velocidadeMax=velocidadeMax;
 }
-public void acelerar(){
-    velocidade++;
+public void acelerar(int aumentar){
+    this.velocidade=Math.min(this.velocidade+ aumentar, this.velocidadeMax);
     ajustarmarcha();
 }
-public void frear(){
-    velocidade=velocidade-1;
+public void frear(int diminuir){
+    this.velocidade=Math.max(0, this.velocidade- diminuir);
     ajustarmarcha();
     }
 public void ajustarmarcha(){
-    if(velocidade==0){
+    if(this.velocidade==0){
         this.marcha=0;
     }
-    else if(velocidade<5){
+    else if(this.velocidade<5){
         this.marcha=1;
     }
-    else if(velocidade<7){
+    else if(this.velocidade<7){
         this.marcha=2;
     }
     else{
@@ -31,6 +31,6 @@ public void ajustarmarcha(){
     }
 }
 public void imprimir(){
-    System.out.println("Velocidade:"+velocidade+"\nMarcha:"+marcha);
+    System.out.println("Velocidade:"+this.velocidade+"\nMarcha:"+this.marcha+"\nVelocidade Max:"+this.velocidadeMax);
 }
 }

@@ -2,22 +2,19 @@ package AtvBicicleta;
 
 public class BikeMain {
     public static void main(String[] args) {
-        bicicleta bc=new bicicleta(0, 0);
+        bicicleta bike = new bicicleta(100);
     System.out.println("Status inicial:");
-        bc.imprimir();
+        bike.imprimir();
         
     System.out.println("-----------------");
     System.out.println("Status de acelerar:");
-    for(int i=1;i<7;i++){
-        bc.acelerar();
-        bc.imprimir();
-    }
+        bike.acelerar(27);
+        bike.imprimir();
+    
     System.out.println("-----------------");
     System.out.println("Status de frear:");
-    for(int i=0;i<4;i++){
-        bc.frear();
-        bc.ajustarmarcha();
-        bc.imprimir();
-    }
+        bike.frear(4);
+        bike.ajustarmarcha();
+        bike.imprimir();
     }
 }
