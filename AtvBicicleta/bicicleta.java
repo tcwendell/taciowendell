@@ -23,7 +23,7 @@ public void ajustarmarcha(){
     else if(this.velocidade<5){
         this.marcha=1;
     }
-    else if(this.velocidade<7){
+    else if(this.velocidade<10){
         this.marcha=2;
     }
     else{
