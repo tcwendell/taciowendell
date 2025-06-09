@@ -3,7 +3,7 @@ package AtvZoologico;
 public class Peixe extends Animal implements Aquatico {
     @Override
         public void emitirSom(){
-            System.out.println("O peixe sla");
+            System.out.println("O peixe faz: Blub Blub!");
         }
     @Override
         public void Alimentar(){
